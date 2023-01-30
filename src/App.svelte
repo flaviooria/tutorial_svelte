@@ -3,8 +3,10 @@
   // Los componentes en svelte no requieren un export para usarlos, solo se importan
   import Atributes from './lib/components/Atributes.svelte';
   import Input from './lib/components/Input.svelte';
+  import InputRangeNumber from './lib/components/InputRangeNumber.svelte';
 </script>
 
 <!--  Usando nuestro componente -->
 <!-- <Atributes /> -->
-<Input />
+<!-- <Input /> -->
+<InputRangeNumber></InputRangeNumber>
