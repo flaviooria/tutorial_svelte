@@ -6,6 +6,6 @@
 </script>
 
 <!--  Usando nuestro componente -->
-<Atributes />
+<!-- <Atributes /> -->
 <br>
 <Assignaments></Assignaments>

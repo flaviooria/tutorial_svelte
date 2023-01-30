@@ -3,7 +3,7 @@
     /**
      * Asignación reactiva
      * Declarión reactiva
-     * Manejo de estado
+     * Sentencias
      * Actualizando arrays y objetos
      */
 
@@ -14,9 +14,13 @@
         // Esto se denomina asignación reactiva, ya que cada vez que hagamos click se activara la función y sumara +1 al count
         count++;
 	}
+
+    // Ahora haremos uso de una declaración reactiva, que es esto, pues svelte utiliza un label "$:", que le indica que debe de renderizarse de nuevo cada vez que los valores referenciados cambie.
+    $: doubled = count * 2
 </script>
 
 <!-- Usaremos el evento on:click para hacer uso de nuestra función definida -->
 <button on:click={incrementCount}>
-	Clicked {count} {count === 1 ? 'time' : 'times'}
+	Clicks {count} {count === 1 ? 'vez' : 'veces'}
 </button>
+<p>El doble de {count} es {doubled}</p>
