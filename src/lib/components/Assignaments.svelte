@@ -17,6 +17,16 @@
 
     // Ahora haremos uso de una declaración reactiva, que es esto, pues svelte utiliza un label "$:", que le indica que debe de renderizarse de nuevo cada vez que los valores referenciados cambie.
     $: doubled = count * 2
+
+    
+    // Uso de sentencias reactivas
+    $: if (count) {
+        console.count('Ejecutandose sentencia reactiva')
+    }
+
+    $: if (count % 4 === 0) {
+        alert(`Alerta: ${count}`)
+    }
 </script>
 
 <!-- Usaremos el evento on:click para hacer uso de nuestra función definida -->
