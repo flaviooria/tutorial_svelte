@@ -1,0 +1,74 @@
+<script>
+  import { cronometer } from '../store/read.store';
+
+  let initCronometer = cronometer(23, 0, 0);
+  let hour, minutes, seconds;
+  let showTime = false;
+
+  const toggle = () => (showTime = !showTime);
+
+  $: if (showTime && $initCronometer) {
+    hour = $initCronometer[0];
+    minutes = $initCronometer[1];
+    seconds = $initCronometer[2];
+    console.log($initCronometer);
+  }
+</script>
+
+
+<h3>Hoy curso de svelte en vivo a las 22:00:00 hrs</h3>
+<button on:click={toggle}>
+    Iniciar cronometro
+</button>
+{#if showTime}
+  <p>Falta:</p>
+  <section class="cronometer">
+    <div class="hour">
+      <p>{hour ?? '00'}</p>
+      <span>HORAS</span>
+    </div>
+    <div class="minutes">
+      <p>{minutes ?? '00'}</p>
+      <span>MINUTOS</span>
+    </div>
+    <div class="seconds">
+      <p>{seconds ?? '00'}</p>
+      <span>SEGUNDOS</span>
+    </div>
+  </section>
+{/if}
+
+<style>
+  .cronometer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 8px;
+    background-color: rgb(179, 206, 224);
+  }
+
+  .cronometer div {
+    border-radius: 8px;
+    background-color: #09f;
+    width: 130px;
+    height: 100px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  .cronometer p {
+    font-weight: bold;
+    font-size: 3em;
+    color: rgb(193, 230, 241);
+    margin: 10px;
+  }
+
+  .cronometer span {
+    font-weight: 500;
+    font-size: 1em;
+    color: rgb(255, 255, 255);
+  }
+</style>

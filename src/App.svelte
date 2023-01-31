@@ -4,6 +4,7 @@
   import Atributes from './lib/components/Atributes.svelte';
   import AutoSubscription1 from './lib/components/AutoSubscription1.svelte';
   import AutoSubscription2 from './lib/components/AutoSubscription2.svelte';
+  import CustomStore from './lib/components/CustomStore.svelte';
   import ReadableStore from './lib/components/ReadableStore.svelte';
   import WritableStore from './lib/components/WritableStore.svelte';
 </script>
@@ -13,4 +14,5 @@
 <!-- <WritableStore></WritableStore> -->
 <!-- <AutoSubscription1></AutoSubscription1> -->
 <!-- <AutoSubscription2></AutoSubscription2> -->
-<ReadableStore></ReadableStore>
+<!-- <ReadableStore></ReadableStore> -->
+<CustomStore></CustomStore>
