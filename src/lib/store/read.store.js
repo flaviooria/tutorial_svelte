@@ -8,7 +8,7 @@ import { readable } from "svelte/store";
 export const time = readable(null, function start(set) {
 
     let dateFinish = new Date();
-    dateFinish.setHours(18, 0, 0)
+    dateFinish.setHours(22, 0, 0)
 
     let intervalCronometer = setInterval(() => {
         let dateDiff = getDateDiff(new Date(), dateFinish);
