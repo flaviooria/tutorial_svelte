@@ -7,6 +7,7 @@
   import Input from './lib/components/Input.svelte';
   import InputRangeNumber from './lib/components/InputRangeNumber.svelte';
   import Selected from './lib/components/Selected.svelte';
+  import This from './lib/components/This.svelte';
 </script>
 
 <!--  Usando nuestro componente -->
@@ -16,3 +17,4 @@
 <!-- <Checkbox></Checkbox> -->
 <!-- <GroupInputs></GroupInputs> -->
 <!-- <Selected></Selected> -->
+<This></This>
