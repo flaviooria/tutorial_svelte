@@ -1,7 +1,21 @@
 <script>
   import { cronometer } from '../store/read.store';
 
-  let initCronometer = cronometer(23, 0, 0);
+  const now = new Date();
+  const finishDate = new Date(
+    now.getFullYear(),
+    now.getMonth(),
+    now.getDate(),
+    14,
+    45,
+    0
+  );
+  let formatDate = finishDate.toLocaleTimeString('es-ES', {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  });
+  let initCronometer = cronometer(finishDate);
   let hour, minutes, seconds;
   let showTime = false;
 
@@ -11,15 +25,11 @@
     hour = $initCronometer[0];
     minutes = $initCronometer[1];
     seconds = $initCronometer[2];
-    console.log($initCronometer);
   }
 </script>
 
-
-<h3>Hoy curso de svelte en vivo a las 22:00:00 hrs</h3>
-<button on:click={toggle}>
-    Iniciar cronometro
-</button>
+<h3>Hoy curso de svelte en vivo a las {formatDate} hrs</h3>
+<button on:click={toggle}> Iniciar cronometro </button>
 {#if showTime}
   <p>Falta:</p>
   <section class="cronometer">

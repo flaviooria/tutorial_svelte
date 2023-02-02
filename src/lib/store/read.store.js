@@ -28,9 +28,7 @@ export const time = readable(null, function start(set) {
 });
 
 // Custom store
-export function cronometer(hour = 0, minutes = 0, seconds = 0) {
-  let dateFinish = new Date();
-  dateFinish.setHours(hour, minutes, seconds);
+export function cronometer(dateFinish) {
   return readable(null, function start(set) {
     let intervalCronometer = setInterval(() => {
       let dateDiff = getDateDiff(new Date(), dateFinish);
